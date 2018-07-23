@@ -45,7 +45,8 @@ function init() {
   // particles
   var PI2 = Math.PI * 2;
   var material = new THREE.SpriteCanvasMaterial({
-    color: 0xffffff,
+    color: 0xd8d8d8,
+    opacity: 0.7,
     program: function (context) {
       context.beginPath();
       context.arc(0, 0, 0.5, 0, PI2, true);
@@ -55,21 +56,21 @@ function init() {
 
   var geometry = new THREE.Geometry();
 
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     particle = new THREE.Sprite(material);
     particle.position.x = Math.random() * 2 - 1;
     particle.position.y = Math.random() * 2 - 1;
     particle.position.z = Math.random() * 2 - 1;
     particle.position.normalize();
     particle.position.multiplyScalar(Math.random() * 10 + 450);
-    particle.scale.x = particle.scale.y = 10;
+    particle.scale.x = particle.scale.y = 5;
     scene.add(particle);
     geometry.vertices.push(particle.position);
   }
 
   // lines
   var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({
-    color: 0xffffff,
+    color: 0xd8d8d8,
     opacity: 0.5
   }));
   scene.add(line);
