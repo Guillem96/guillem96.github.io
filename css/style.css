@@ -1,0 +1,11 @@
+.guillem-info {
+  display: none;
+}
+
+.loading {
+  display: block;
+  position: relative;
+  top:20%;
+
+  margin: auto;
+}
