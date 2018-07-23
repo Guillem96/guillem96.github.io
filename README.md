@@ -1,2 +1,2 @@
-# guillem96.github.io
-Personal webpage
+# Personal webpage
+To attach it to my CV
