@@ -1,13 +1,11 @@
-/* gradient fallbacks taken from csstricks.com */
-
 body {
-  background-color: #00a98f;
+  background-color: #0083B0;
   background-image: url(fallback-gradient.svg);
-  background-image: -webkit-gradient(linear, left top, right top, from(#00a98f), to(#b7e8e0));
-  background-image: -webkit-linear-gradient(left, #00a98f, #b7e8e0);
-  background-image: -moz-linear-gradient(left, #00a98f, #b7e8e0);
-  background-image: -o-linear-gradient(left, #00a98f, #b7e8e0);
-  background-image: linear-gradient(to right, #00a98f, #b7e8e0);
+  background-image: -webkit-gradient(linear, left top, right top, from(#0083B0), to(#00B4DB));
+  background: #00B4DB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .guillem-info {
@@ -20,15 +18,12 @@ body {
   top: 0;
   z-index: 1;
 }
-.guillem-image {
-  width: 100%;
-  height: 100%;
-}
 
 .image-bg {
   height: 100%;
-  background: url("../img/bg.jpg");
+  background: url("../img/bg-filter.png");
   background-size: cover;
+  background-position: center;
 }
 
 .loading {
@@ -41,14 +36,15 @@ body {
 }
 
 .presentation {
+  color: white;
   z-index: 120;
-  font-weight: 500;
+  font-weight: 500 !important;
   text-align: center;
   font-size: 2.5em !important;
 }
 
 a i {
-  color: #333333;
+  color: white;
   -webkit-transition: color 1s;
   z-index: 120 !important;
   transition: color 1s;
@@ -73,15 +69,18 @@ a i {
 .network-links {
   padding: 0.5em;
   font-size: 3em;
-
 }
 
 .info {
   z-index: 120;
 }
+
 @media (max-width: 800px) {
   .info {
-    position: absolute;
-    top: 0;
+    position: absolute !important;
+    bottom: 0;
+  }
+  body {
+    overflow: hidden;
   }
 }
