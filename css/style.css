@@ -1,11 +1,19 @@
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: #0083B0;
   background-image: url(fallback-gradient.svg);
   background-image: -webkit-gradient(linear, left top, right top, from(#0083B0), to(#00B4DB));
-  background: #00B4DB;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00B4DB;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   overflow: hidden;
+  position: relative;
 }
 
 .guillem-info {
@@ -32,7 +40,6 @@ body {
   top: 20%;
   margin: auto;
   z-index: 120;
-
 }
 
 .presentation {
@@ -48,6 +55,8 @@ a i {
   -webkit-transition: color 1s;
   z-index: 120 !important;
   transition: color 1s;
+  padding-left: .2em;
+  padding-right: .2em;
 }
 
 .fa-github-alt:hover {
@@ -71,6 +80,10 @@ a i {
   font-size: 3em;
 }
 
+.network-links ul {
+  text-align: center;
+}
+
 .info {
   z-index: 120;
 }
@@ -81,4 +94,8 @@ a i {
     bottom: 0;
   }
 
+  a i {
+    padding-left: .1em;
+    padding-right: .1em;
+  }
 }
