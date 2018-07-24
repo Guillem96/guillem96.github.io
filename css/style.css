@@ -99,3 +99,7 @@ a i {
     padding-right: .1em;
   }
 }
+
+.guillem-info-wrapper {
+  height: inherit;
+}
