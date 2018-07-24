@@ -18,12 +18,6 @@ body {
   height: 100%;
 }
 
-.bg canvas {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
 .image-bg {
   height: 100%;
   background: url("../img/bg.jpg");

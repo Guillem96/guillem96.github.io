@@ -1,146 +1,110 @@
-// Copyright to -> https://codepen.io/billimarie/pen/mJLeBY
-var mouseX = 0,
-  mouseY = 0,
-  windowHalfX = window.innerWidth / 2,
-  windowHalfY = window.innerHeight / 2,
-  SEPARATION = 200,
-  AMOUNTX = 10,
-  AMOUNTY = 10,
-  camera,
-  scene,
-  renderer;
-
-init();
-animate();
-
-function init() {
-
-  var container,
-    separation = 100,
-    amountX = 50,
-    amountY = 50,
-    particle;
-
-  container = document.createElement('div');
-  $(container).addClass("bg");
-  
-  document.body.appendChild(container);
-
-  scene = new THREE.Scene();
-
-  renderer = new THREE.CanvasRenderer({
-    alpha: true
-  }); // gradient; this can be swapped for WebGLRenderer
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  container.appendChild(renderer.domElement);
-
-  camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    1,
-    10000
-  );
-  camera.position.z = 100;
-
-  // particles
-  var PI2 = Math.PI * 2;
-  var material = new THREE.SpriteCanvasMaterial({
-    color: 0xd8d8d8,
-    opacity: 0.7,
-    program: function (context) {
-      context.beginPath();
-      context.arc(0, 0, 0.5, 0, PI2, true);
-      context.fill();
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
     }
-  });
-
-  var geometry = new THREE.Geometry();
-
-  for (var i = 0; i < 50; i++) {
-    particle = new THREE.Sprite(material);
-    particle.position.x = Math.random() * 2 - 1;
-    particle.position.y = Math.random() * 2 - 1;
-    particle.position.z = Math.random() * 2 - 1;
-    particle.position.normalize();
-    particle.position.multiplyScalar(Math.random() * 10 + 450);
-    particle.scale.x = particle.scale.y = 5;
-    scene.add(particle);
-    geometry.vertices.push(particle.position);
-  }
-
-  // lines
-  var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({
-    color: 0xd8d8d8,
-    opacity: 0.5
-  }));
-  scene.add(line);
-
-  // mousey
-  document.addEventListener('mousemove', onDocumentMouseMove, false);
-  document.addEventListener('touchstart', onDocumentTouchStart, false);
-  document.addEventListener('touchmove', onDocumentTouchMove, false);
-
-  window.addEventListener('resize', onWindowResize, false);
-
-
-} // end init();
-
-function onWindowResize() {
-
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-
-}
-
-function onDocumentMouseMove(event) {
-
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
-
-}
-
-function onDocumentTouchStart(event) {
-
-  if (event.touches.length > 1) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-    mouseY = event.touches[0].pageY - windowHalfY;
-
-  }
-}
-
-function onDocumentTouchMove(event) {
-
-  if (event.touches.length == 1) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-    mouseY = event.touches[0].pageY - windowHalfY;
-
-  }
-}
-
-function animate() {
-
-  requestAnimationFrame(animate);
-  render();
-
-}
-
-function render() {
-
-  camera.position.x += (mouseX - camera.position.x) * .05;
-  camera.position.y += (-mouseY + 200 - camera.position.y) * .05;
-  camera.lookAt(scene.position);
-
-  renderer.render(scene, camera);
-
-}
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 10,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
