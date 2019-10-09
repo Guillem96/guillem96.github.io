@@ -64,6 +64,10 @@ a i {
   color: #0077b5;
 }
 
+.fa-stack-overflow:hover {
+  color: #f48024;
+}
+
 .fa-envelope:hover {
   color: #dd4b39;
 }
