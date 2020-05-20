@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GithubService } from '../github.service';
 
 @Component({
@@ -7,11 +7,10 @@ import { GithubService } from '../github.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private github: GithubService) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.github.getRepositories().subscribe(console.log);
   }
 
 }

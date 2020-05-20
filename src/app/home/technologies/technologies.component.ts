@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Skill } from 'src/app/shared/types/skill';
 
 @Component({
   selector: 'app-technologies',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnologiesComponent implements OnInit {
 
-  public skills = [
+  public skills: Skill[] = [
     {
       name: 'Tensorflow',
       img: 'tf.png',
@@ -24,20 +25,36 @@ export class TechnologiesComponent implements OnInit {
       level: 9
     },
     {
-      name: 'Google Cloud Platform',
+      name: 'Google Cloud',
       img: 'gcp.png',
       level: 7
     },
     {
-      name: 'Amazon Web Services',
+      name: 'AWS',
       img: 'aws.png',
       level: 5
+    },
+    {
+      name:'Angular',
+      img: 'angular.png',
+      level: 7
+    },
+    {
+      name:'Spring Boot',
+      img: 'spring.png',
+      level: 6
+    },
+    {
+      name:'Docker',
+      img: 'docker.png',
+      level: 8
     },
   ];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.skills = this.skills.sort((a, b) => b.level - a.level);
   }
 
 }

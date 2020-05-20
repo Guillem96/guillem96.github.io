@@ -1,3 +1,6 @@
+import { GITHUB_TOKEN } from './secret';
+
 export const environment = {
-  production: true
+  production: true,
+  githubToken: GITHUB_TOKEN
 };

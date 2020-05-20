@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { PresentationComponent } from './home/presentation/presentation.component';
 import { LetterComponent } from './home/letter/letter.component';
 import { TechnologiesComponent } from './home/technologies/technologies.component';
+import { SkillCardComponent } from './home/technologies/skill-card/skill-card.component';
+import { ProjectsComponent } from './home/projects/projects.component';
+import { ProjectCardComponent } from './home/projects/project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { TechnologiesComponent } from './home/technologies/technologies.componen
     HomeComponent,
     PresentationComponent,
     LetterComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    SkillCardComponent,
+    ProjectsComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,

@@ -5,20 +5,11 @@
     </h3>
 
     <div class="skills">
-      <div class="row">
-        <div *ngFor="let s of skills" class="col-4">
-          <div class="card m-1">
-            <div class="card-body">
-                <h4 class="card-title"><a>{{s.name}}</a></h4>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" [ngStyle]="{'width.%': s.level * 10}"
-                    aria-valuenow="{{s.level * 10}}" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-          </div>
+      <div class="row justify-content-center">
+        <div *ngFor="let s of skills" class="col-4 mb-2">
+          <app-skill-card [skill]="s"></app-skill-card>
         </div>
       </div>
-
     </div>
   </div>
 </div>

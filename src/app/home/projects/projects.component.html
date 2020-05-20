@@ -1,0 +1,15 @@
+<div class="projects p-4" id="projects">
+  <div class="container">
+    <h3 class="text-center p-4 mt-4">
+      <b>Personal Projects & Papers with Code</b>
+    </h3>
+
+    <div class="projects-list">
+      <div class="row align-items-center flex-nowrap">
+        <div *ngFor="let r of repositories" class="col-4 mb-2">
+          <app-project-card [project]="r"></app-project-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

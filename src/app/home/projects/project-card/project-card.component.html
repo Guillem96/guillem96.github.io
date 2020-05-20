@@ -1,0 +1,20 @@
+<mdb-card class="m-1">
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4 class="card-title">
+        <a [href]="'https://github.com/Guillem96/' + project?.name">
+          {{project?.name}}
+        </a>
+      </h4>
+    </mdb-card-title>
+    <mdb-card-body>
+      <mdb-card-text class="text-justify">
+        {{project?.description}}
+      </mdb-card-text>
+      <div class="project-footer text-muted">
+        <i class="fas fa-star mr-1"></i> {{project?.stargazers_count}}
+        <i class="fas fa-code-branch ml-3 mr-1"></i> {{project?.forks_count}}
+      </div>
+    </mdb-card-body>
+  </mdb-card-body>
+</mdb-card>
