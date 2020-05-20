@@ -19,7 +19,7 @@ export class GithubService {
 
   public getRepositories(): Observable<any> {
     const urls = this.REPOS_IDS.map(o => `${this.BASE_URL}/repos/Guillem96/${o}`);
-    const requests = urls.map(o => this.http.get(o, {headers: this.AUTH_HEADER}));
+    const requests = urls.map(o => this.http.get(o));
     return forkJoin(requests);
   }
 }
