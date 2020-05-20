@@ -2,16 +2,17 @@ h3 {
     font-weight: bolder;
 }
 
-.projects-list {
-
+.projects {
+    background: rgb(0,191,165);
+    background: linear-gradient(0deg, #80cbc4  0%, #3aa197  100%);
 }
 
 .projects-list > .row {
     overflow-x: auto;
-    // white-space: nowrap;
+    overflow-y: hidden;
 }
 
-.projects-list > .row > .col-4 {
+.projects-list > .row > .proj {
     display: inline-block;
     float: none;
 }
@@ -29,12 +30,26 @@ h3 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #80cbc4 ;
+    background-color: #d3f0ed ;
     border-radius: 10px;
-
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #5f948f;
+    background-color: #73b6af;
+}
+
+.btn-wrapper a {
+    padding: 1em;
+    border: white solid;
+    border-radius: 2rem;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.btn-wrapper a:hover {
+    -webkit-box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.75);
 }

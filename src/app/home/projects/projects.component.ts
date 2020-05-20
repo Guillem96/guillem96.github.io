@@ -14,7 +14,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.github.getRepositories().subscribe(res => {
       this.repositories = res;
-      this.repositories = this.repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
+      this.repositories = this.repositories
+        .sort((a, b) => b.stargazers_count - a.stargazers_count);
     });
   }
 

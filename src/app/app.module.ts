@@ -14,6 +14,7 @@ import { TechnologiesComponent } from './home/technologies/technologies.componen
 import { SkillCardComponent } from './home/technologies/skill-card/skill-card.component';
 import { ProjectsComponent } from './home/projects/projects.component';
 import { ProjectCardComponent } from './home/projects/project-card/project-card.component';
+import { ContactsComponent } from './home/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProjectCardComponent } from './home/projects/project-card/project-card.
     TechnologiesComponent,
     SkillCardComponent,
     ProjectsComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

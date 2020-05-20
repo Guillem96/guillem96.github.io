@@ -40,6 +40,11 @@ export class TechnologiesComponent implements OnInit {
       level: 7
     },
     {
+      name:'JAX',
+      img: 'jax.png',
+      level: 7
+    },
+    {
       name:'Spring Boot',
       img: 'spring.png',
       level: 6
@@ -48,6 +53,11 @@ export class TechnologiesComponent implements OnInit {
       name:'Docker',
       img: 'docker.png',
       level: 8
+    },
+    {
+      name:'NX Homebrew',
+      img: 'nx.png',
+      level: 6
     },
   ];
 
