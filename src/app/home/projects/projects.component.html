@@ -1,0 +1,19 @@
+<div class="projects p-4" id="projects">
+  <div class="container">
+    <h3 class="text-center text-white p-4 mt-4">
+      <b>Personal Projects & Papers with Code</b>
+    </h3>
+
+    <div class="projects-list mb-4 pb-4">
+      <div class="row align-items-center flex-nowrap">
+        <div *ngFor="let r of repositories" class="proj col-12 col-sm-12 col-md-6 col-lg-4 mb-2">
+          <app-project-card [project]="r"></app-project-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-wrapper mt-4 mb-4 mx-auto text-center">
+      <a href="https://github.com/Guillem96">See more on <i class="fab fa-lg fa-github"></i></a>
+    </div>
+  </div>
+</div>
