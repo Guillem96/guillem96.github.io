@@ -12,9 +12,9 @@
         {{shortDescription(project?.description)}}
       </mdb-card-text>
       <div class="project-footer text-muted">
-        <i class="fas fa-circle mr-1" [ngStyle]="{'color': langColor[project?.language]}"></i> {{project?.language}}
-        <i class="fas fa-star ml-3 mr-1"></i> {{project?.stargazers_count}}
-        <i class="fas fa-code-branch ml-3 mr-1"></i> {{project?.forks_count}}
+        <i class="fas fa-circle mr-1" [ngStyle]="{'color': langColor[project?.primaryLanguage.name]}"></i> {{project?.primaryLanguage.name}}
+        <i class="fas fa-star ml-3 mr-1"></i> {{project?.stargazerCount}}
+        <i class="fas fa-code-branch ml-3 mr-1"></i> {{project?.forkCount}}
       </div>
     </mdb-card-body>
   </mdb-card-body>
