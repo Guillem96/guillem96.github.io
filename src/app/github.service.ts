@@ -2,19 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubService {
   private BASE_URL = "https://api.github.com/graphql";
-  private AUTH_HEADER = {Authorization: `token ${environment.githubToken}`};
 
   constructor(private http: HttpClient) { }
 
   public getRepositories(): Observable<any> {
-    const header = {headers: new HttpHeaders(this.AUTH_HEADER)};
+    // Generated with btoa(username:token)
+    const encodedCreds = "Basic " + 'R3VpbGxlbTk2OjdlYzY0ZjFiYTg0ZjkzZmJhNTA3ZDE3MTUyZjhhYmQ5YTlhZTE1Njg=';
+    const header = {headers: new HttpHeaders({Authorization: encodedCreds})};
 
     const query = `
       query {
